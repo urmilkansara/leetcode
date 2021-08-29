@@ -17,7 +17,7 @@ public class InputHelper
 
 			while(myReader.hasNext()){
 				data.add(myReader.nextLine());
-				System.out.println(data);
+
 			}
 			myReader.close();
 		}
@@ -25,6 +25,7 @@ public class InputHelper
 		{
 			e.printStackTrace();
 		}
+		System.out.println(data);
 		return data;
 	}
 
@@ -35,6 +36,18 @@ public class InputHelper
 
 	public String getSingleString() {
 		Scanner sc = new Scanner(System.in);
-		return sc.next();
+		return sc.nextLine();
 	}
+
+	public int[] getListofIntegers(){
+		String[] s = this.getSingleString().split(" ");
+
+		int[] nums = new int[s.length];
+
+		for(int i = 0; i< s.length; i++){
+			nums[i] = Integer.parseInt(s[i]);
+		}
+		return nums;
+	}
+
 }
